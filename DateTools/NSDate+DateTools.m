@@ -185,7 +185,7 @@ static NSCalendar *implicitCalendar = nil;
     //use abbreviated unit names
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSCalendarUnitMinute | NSCalendarUnitHour | NSCalendarUnitDay | NSCalendarUnitWeekOfYear | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitSecond;
+    NSUInteger unitFlags = NSCalendarUnitMinute | NSCalendarUnitHour | NSCalendarUnitDay | NSCalendarUnitWeekOfYear | NSCalendarUnitYear | NSCalendarUnitSecond;
     NSDate *earliest = [self earlierDate:date];
     NSDate *latest = (earliest == self) ? date : self;
     NSDateComponents *components = [calendar components:unitFlags fromDate:earliest toDate:latest options:0];
@@ -194,9 +194,6 @@ static NSCalendar *implicitCalendar = nil;
     if (components.year >= 1) {
         return  [self logicLocalizedStringFromFormat:@"%%d%@y" withValue:components.year];
     }
-//    else if (components.month >= 1) {
-//        return [self logicLocalizedStringFromFormat:@"%%d%@M" withValue:components.month];
-//    }
     else if (components.weekOfYear >= 1) {
         return [self logicLocalizedStringFromFormat:@"%%d%@w" withValue:components.weekOfYear];
     }
