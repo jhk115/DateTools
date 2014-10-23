@@ -194,9 +194,9 @@ static NSCalendar *implicitCalendar = nil;
     if (components.year >= 1) {
         return  [self logicLocalizedStringFromFormat:@"%%d%@y" withValue:components.year];
     }
-    else if (components.month >= 1) {
-        return [self logicLocalizedStringFromFormat:@"%%d%@M" withValue:components.month];
-    }
+//    else if (components.month >= 1) {
+//        return [self logicLocalizedStringFromFormat:@"%%d%@M" withValue:components.month];
+//    }
     else if (components.weekOfYear >= 1) {
         return [self logicLocalizedStringFromFormat:@"%%d%@w" withValue:components.weekOfYear];
     }
